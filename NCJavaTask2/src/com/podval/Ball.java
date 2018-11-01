@@ -73,4 +73,31 @@ public class Ball {
     public String toString() {
         return "Ball[" + '(' + x + ',' + y + "), speed=(" + xDelta + "," + yDelta + ")]";
     }
+
+
+    @Override
+    public boolean equals(Object obj){
+        if(obj == this){
+            return true;
+        }
+        if(obj == null || obj.getClass() != this.getClass()){
+            return false;
+        }
+        Ball container = (Ball) obj;
+
+        return this.x == container.x && this.y == container.y && this.radius == container.radius &&
+                this.xDelta == container.xDelta && this.yDelta == container.yDelta;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + Float.floatToIntBits(this.x);
+        result = 31 * result + Float.floatToIntBits(this.y);
+        result = 31 * result + Float.floatToIntBits(this.xDelta);
+        result = 31 * result + Float.floatToIntBits(this.yDelta);
+        result = 31 * result + radius;
+
+        return result;
+    }
 }

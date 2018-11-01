@@ -47,4 +47,29 @@ public class Container {
     public String toString() {
         return "Container[(" + x1 + ',' + y1 + "),(" + x2 + ',' + y2 + ")]";
     }
+
+    @Override
+    public boolean equals(Object obj){
+        if(obj == this){
+            return true;
+        }
+        if(obj == null || obj.getClass() != this.getClass()){
+            return false;
+        }
+        Container container = (Container) obj;
+
+        return this.x1 == container.x1 && this.x2 == container.x2 &&
+                this.y1 == container.y1 && this.y2 == container.y2;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + this.x1;
+        result = 31 * result + this.x2;
+        result = 31 * result + this.y1;
+        result = 31 * result + this.y2;
+
+        return result;
+    }
 }

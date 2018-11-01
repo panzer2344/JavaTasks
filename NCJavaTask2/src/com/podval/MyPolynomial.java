@@ -68,4 +68,36 @@ public class MyPolynomial {
         }
         return result;
     }
+
+    @Override
+    public boolean equals(Object obj){
+        if(obj == this){
+            return true;
+        }
+        if(obj == null || obj.getClass() != this.getClass()){
+            return false;
+        }
+
+        MyPolynomial polynomial = (MyPolynomial) obj;
+
+        if(this.coeffs.length != polynomial.coeffs.length){
+            return false;
+        }
+        for(int i = 0; i < coeffs.length; i++){
+            if(this.coeffs[i] != polynomial.coeffs[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        for(double coeff : coeffs) {
+            long f = Double.doubleToLongBits(coeff);
+            result = 31 * result + (int) (f ^ (f >> 32));
+        }
+        return result;
+    }
 }
