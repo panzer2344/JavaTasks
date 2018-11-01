@@ -1,5 +1,7 @@
 package com.podval;
 
+import java.util.Objects;
+
 public class MyPoint {
     private int x = 0;
     private int y = 0;
@@ -56,5 +58,26 @@ public class MyPoint {
     // distance to (0, 0)
     public double distance(){
         return Math.sqrt( x * x + y * y );
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this){
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()){
+            return false;
+        }
+        MyPoint point = (MyPoint) obj;
+
+        return x == point.x && y == point.y;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + x;
+        result = 31 * result + y;
+        return result;
     }
 }

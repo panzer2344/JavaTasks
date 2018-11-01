@@ -47,4 +47,25 @@ public class Rectangle {
                 ", width=" + width +
                 ']';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this){
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()){
+            return false;
+        }
+        Rectangle rectangle = (Rectangle) obj;
+
+        return length == rectangle.length && width == rectangle.width;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + Float.floatToIntBits(length);
+        result = 31 * result + Float.floatToIntBits(width);
+        return result;
+    }
 }

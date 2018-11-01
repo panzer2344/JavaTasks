@@ -54,4 +54,28 @@ public class Employee {
                 + ", salary=" + salary
                 + ']';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this){
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()){
+            return false;
+        }
+        Employee employee = (Employee) obj;
+
+        return employee.salary == salary && employee.id == id &&
+                employee.firstName == firstName && employee.lastName == lastName;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + id;
+        result = 31 * result + salary;
+        result = 31 * result + firstName.hashCode();
+        result = 31 * result + lastName.hashCode();
+        return result;
+    }
 }

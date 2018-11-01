@@ -43,4 +43,30 @@ public class Author {
                 ", gender=" + gender +
                 ']';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this){
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()){
+            return false;
+        }
+        Author author = (Author) obj;
+
+        return author.email.equals(email) &&
+                author.gender == gender &&
+                author.name.equals(name);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + (int)gender;
+        result = 31 * result + email.hashCode();
+        result = 31 * result + name.hashCode();
+        return result;
+    }
+
+
 }

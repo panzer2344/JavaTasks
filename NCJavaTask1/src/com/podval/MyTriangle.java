@@ -35,8 +35,10 @@ public class MyTriangle {
         double lenEdge2 = v2.distance(v3);
         double lenEdge3 = v3.distance(v1);
 
+        double delta = getAdequateLenDelta();
+
         if(lenEdge1 == lenEdge2 || lenEdge2 == lenEdge3 || lenEdge3 == lenEdge1){
-            if(lenEdge1 == lenEdge2 && lenEdge2 == lenEdge3){
+            if(Math.abs(lenEdge1 - lenEdge2) <= delta  && Math.abs(lenEdge2 - lenEdge3) <= delta){
                 return "Equilateral";
             }
             else{
@@ -46,5 +48,41 @@ public class MyTriangle {
         else{
             return "Scalene";
         }
+    }
+
+    //from experiment, work on large sizes
+    private double getAdequateLenDelta(){
+        double avgLen = getAvgLen();
+        return 0.03 * avgLen;
+    }
+
+    private double getAvgLen(){
+        double lenEdge1 = v1.distance(v2);
+        double lenEdge2 = v2.distance(v3);
+        double lenEdge3 = v3.distance(v1);
+
+        return (lenEdge1 + lenEdge2 + lenEdge3) / 3;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this){
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()){
+            return false;
+        }
+        MyTriangle triangle = (MyTriangle) obj;
+
+        return v1.equals(triangle.v1) && v2.equals(triangle.v2) && v3.equals(triangle.v3);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + v1.hashCode();
+        result = 31 * result + v2.hashCode();
+        result = 31 * result + v3.hashCode();
+        return result;
     }
 }

@@ -44,7 +44,7 @@ public class tests {
         System.out.println("Triangle perimeter = " + triangle2.getPerimeter());
         System.out.println("Triangle type: " + triangle2.getType());
 
-        MyTriangle triangle3 = new MyTriangle(new MyPoint(-3, 0), new MyPoint(0, 3), new MyPoint(0, -3));
+        MyTriangle triangle3 = new MyTriangle(new MyPoint(-200, 0), new MyPoint(200, 0), new MyPoint(0, 350));
 
         System.out.println(triangle3);
         System.out.println("Triangle perimeter = " + triangle3.getPerimeter());

@@ -65,4 +65,40 @@ public class Book {
 
         return authorNames;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this){
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()){
+            return false;
+        }
+        Book book = (Book) obj;
+
+        if(book.authors.length != this.authors.length){
+            return false;
+        }
+        for(int i = 0; i < this.authors.length; i++){
+            if(!this.authors[i].equals(book.authors[i])){
+                return false;
+            }
+        }
+        return this.name.equals(book.name) &&
+                this.price == book.price &&
+                this.qty == book.qty;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        long f = Double.doubleToLongBits(price);
+        result = 31 * result + (int)(f ^ (f >> 32));
+        result = 31 * result + qty;
+        result = 31 * result + name.hashCode();
+        for(Author author : authors){
+            result = 31 * result + author.hashCode();
+        }
+        return result;
+    }
 }
