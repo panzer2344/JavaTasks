@@ -2,6 +2,7 @@ package com.podval;
 
 import java.lang.reflect.Array;
 import java.util.Iterator;
+import java.util.LinkedList;
 
 public class MyLinkedList<E> implements ILinkedList<E> {
     private Node<E> headNode = null;
@@ -125,7 +126,11 @@ public class MyLinkedList<E> implements ILinkedList<E> {
 
         MyListIterator iter = getNode(index);
         E removingElm = (E)iter.getCurrent().getElement();
-        iter.remove();
+        if(index == 0){
+            headNode = headNode.getNextNode();
+        }else {
+            iter.remove();
+        }
 
         this.length--;
 
@@ -157,14 +162,41 @@ public class MyLinkedList<E> implements ILinkedList<E> {
     }
 
     public E[] toArray(){
-        E[] array = (E[])new Object[length];
-    }
+        E[] array = (E[])Array.newInstance(myclass, length);
+        MyListIterator iter = iterator();
 
-    public E[] newArray (Class<E[]> type, int size){
+        if(iter.getCurrent() == null){
+            return array;
+        }
 
+        for(int i = 0; i < length; i++){
+            array[i] = (E) iter.getCurrent().getElement();
+            if(iter.hasNext()){
+                iter.next();
+            }
+        }
+
+        return array;
     }
 
     @Override
-    public String toString(){}
+    public String toString(){
+        String str = "";
+        MyListIterator iter = iterator();
+
+        str = "List = { ";
+
+        while(iter.hasNext()){
+            str += iter.getCurrent().getElement();
+            if(iter.hasNext()){
+                str += ", ";
+            }
+            iter.next();
+        }
+
+        str += iter.getCurrent().getElement() + " }";
+
+        return str;
+    }
 
 }

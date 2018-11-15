@@ -31,13 +31,13 @@ public class MyListIterator implements Iterator<Node> {
     public void remove() {
         if(currentNode != null){
             Node tmp = headNode;
-            while(tmp.getNextNode() != currentNode){
-                tmp.getNextNode();
+            while (tmp.getNextNode() != currentNode) {
+                tmp = tmp.getNextNode();
             }
 
-            if(hasNext()){
+            if (hasNext()) {
                 tmp.setNextNode(currentNode.getNextNode());
-            }else{
+            } else {
                 tmp.setNextNode(null);
             }
         }
