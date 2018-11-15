@@ -19,19 +19,54 @@ public class MyLinkedList<E> implements ILinkedList<E> {
     }
 
     @Override
-    public MyListIterator iterator(){
-        return new MyListIterator(headNode);
+    public Iterator iterator(){
+        return new Iterator<E>() {
+            private Node<E> currentNode = MyLinkedList.this.headNode;
+
+            @Override
+            public E next() {
+                E value = currentNode.getElement();
+                if(hasNext()){
+                    currentNode = currentNode.getNextNode();
+                }
+                else{
+                    return null;
+                }
+
+                return value;
+            }
+
+            @Override
+            public boolean hasNext() {
+                return currentNode != null; // strange but fact) It works fine in forech
+            }
+
+            @Override
+            public void remove() {
+                if(currentNode != null){
+                    Node tmp = headNode;
+                    while (tmp.getNextNode() != currentNode) {
+                        tmp = tmp.getNextNode();
+                    }
+
+                    if (hasNext()) {
+                        tmp.setNextNode(currentNode.getNextNode());
+                    } else {
+                        tmp.setNextNode(null);
+                    }
+                }
+            }
+        };
     }
 
     public void add(E element){
         if(headNode == null){
             headNode = new Node<E>(element);
         }else{
-            MyListIterator iter = iterator();
             Node<E> node = headNode;
 
-            while(iter.hasNext()){
-                node = iter.next();
+            while(node.getNextNode() != null){
+                node = node.getNextNode();
             }
 
             Node<E> inserted = new Node<E>(element);
@@ -43,17 +78,15 @@ public class MyLinkedList<E> implements ILinkedList<E> {
     public void add(int index, E element){
         int i = 0;
         Node<E> currentNode = headNode;
-        MyListIterator iter = iterator();
+
 
         if(headNode == null){
             throw new IndexOutOfBoundsException();
         }
 
-        while(i != index){
-            if(iter.hasNext()){
-                currentNode = iter.next();
-            }else{
-                throw new IndexOutOfBoundsException();
+        while(i < index){
+            if(currentNode.getNextNode() != null){
+                currentNode = currentNode.getNextNode();
             }
             i++;
         }
@@ -80,11 +113,10 @@ public class MyLinkedList<E> implements ILinkedList<E> {
 
         int index = 0;
         Node<E> currentNode = headNode;
-        MyListIterator iter = iterator();
 
         while(currentNode.getElement() != element){
-            if(iter.hasNext()){
-                currentNode = iter.next();
+            if(currentNode.getNextNode() != null){
+                currentNode = currentNode.getNextNode();
                 index++;
             }else{
                 return -1;
@@ -94,21 +126,20 @@ public class MyLinkedList<E> implements ILinkedList<E> {
         return index;
     }
 
-    private MyListIterator getNode(int index) {
+    private Node<E> getNode(int index) {
         int i = 0;
-        MyListIterator iter = iterator();
         Node<E> node = headNode;
 
         while(i != index){
-            if(iter.hasNext()){
-                node = iter.next();
+            if(node.getNextNode() != null){
+                node = node.getNextNode();
                 i++;
             }else{
                 throw new IndexOutOfBoundsException();
             }
         }
 
-        return iter;
+        return node;
     }
 
     public E get(int index){
@@ -116,7 +147,7 @@ public class MyLinkedList<E> implements ILinkedList<E> {
             throw new IndexOutOfBoundsException();
         }
 
-        return (E)getNode(index).getCurrent().getElement();
+        return (E)getNode(index).getElement();
     }
 
     public E remove(int index){
@@ -124,12 +155,16 @@ public class MyLinkedList<E> implements ILinkedList<E> {
             throw new IndexOutOfBoundsException();
         }
 
-        MyListIterator iter = getNode(index);
-        E removingElm = (E)iter.getCurrent().getElement();
+        E removingElm = null;
+
         if(index == 0){
+            removingElm = headNode.getElement();
             headNode = headNode.getNextNode();
         }else {
-            iter.remove();
+            Node<E> nodePrev = getNode(index - 1);
+            removingElm = (E)nodePrev.getNextNode().getElement();
+
+            nodePrev.setNextNode(nodePrev.getNextNode().getNextNode());
         }
 
         this.length--;
@@ -144,9 +179,9 @@ public class MyLinkedList<E> implements ILinkedList<E> {
 
         E ret;
         if(index > 0 && index < this.length) {
-            MyListIterator iter = getNode(index);
-            iter.getCurrent().setElement(element);
-            ret = (E)iter.getCurrent().getElement();
+            Node<E> node = getNode(index);
+            node.setElement(element);
+            ret = (E)node.getElement();
         }else if(index == this.length){
             add(element);
             ret = get(index);
@@ -163,16 +198,16 @@ public class MyLinkedList<E> implements ILinkedList<E> {
 
     public E[] toArray(){
         E[] array = (E[])Array.newInstance(myclass, length);
-        MyListIterator iter = iterator();
+        Node<E> currentNode = headNode;
 
-        if(iter.getCurrent() == null){
+        if(headNode == null){
             return array;
         }
 
         for(int i = 0; i < length; i++){
-            array[i] = (E) iter.getCurrent().getElement();
-            if(iter.hasNext()){
-                iter.next();
+            array[i] = (E) currentNode.getElement();
+            if(currentNode.getNextNode() != null){
+                currentNode = currentNode.getNextNode();
             }
         }
 
@@ -182,19 +217,19 @@ public class MyLinkedList<E> implements ILinkedList<E> {
     @Override
     public String toString(){
         String str = "";
-        MyListIterator iter = iterator();
+        Node<E> currentNode = headNode;
 
         str = "List = { ";
 
-        while(iter.hasNext()){
-            str += iter.getCurrent().getElement();
-            if(iter.hasNext()){
+        while(currentNode.getNextNode() != null){
+            str += currentNode.getElement();
+            if(currentNode.getNextNode() != null){
                 str += ", ";
             }
-            iter.next();
+            currentNode = currentNode.getNextNode();
         }
 
-        str += iter.getCurrent().getElement() + " }";
+        str += currentNode.getElement() + " }";
 
         return str;
     }

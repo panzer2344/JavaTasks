@@ -1,6 +1,6 @@
 package com.podval;
 
-public interface ILinkedList<E> extends Iterable<Node> {
+public interface ILinkedList<E> extends Iterable<E> {
 
     void add(E element);
     void add(int index, E element);
