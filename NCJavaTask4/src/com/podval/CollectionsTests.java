@@ -3,14 +3,148 @@ package com.podval;
 import java.util.*;
 
 public class CollectionsTests {
+    private static final int collectionSize = 10000;
+    private static Integer[] values = new Integer[collectionSize];
+    private static long startTime = 0, estimatedTime = 0;
+
+    private static void newLine(){
+        System.out.println();
+        System.out.println();
+    }
+
+    private static void printEstTime(Collection<?> collection, long start){
+        estimatedTime = System.nanoTime() - startTime;
+        System.out.println(collection.getClass().toString() + ": " + estimatedTime);
+    }
+
+    private static void printEstTime(Map<?, ?> map, long start){
+        estimatedTime = System.nanoTime() - startTime;
+        System.out.println(map.getClass().toString() + ": " + estimatedTime);
+    }
+
+    private static <T> void add(T[] initArray, Collection<T>... collections){
+
+        System.out.println("Adding: ");
+
+        for(Collection<T> collection : collections){
+            startTime = System.nanoTime();
+            for(int i = 0; i < collectionSize; i++){
+                collection.add(initArray[i]);
+            }
+            printEstTime(collection, startTime);
+        }
+        newLine();
+    }
+
+    private static <T> void searche(T[] initArray, List<T>... lists){
+
+        System.out.println("Searching: ");
+
+        for(List<T> list : lists) {
+            startTime = System.nanoTime();
+            for (int i = 0; i < collectionSize; i++) {
+                list.indexOf(initArray[i]);
+            }
+            printEstTime(list, startTime);
+        }
+        newLine();
+
+    }
+
+    private static <T> void remove(T[] initArray, Collection<T>... collections){
+
+        System.out.println("Removing: ");
+
+        for(Collection<T> collection : collections){
+            startTime = System.nanoTime();
+            for(int i = 0; i < collectionSize; i++){
+                collection.remove(initArray[i]);
+            }
+            printEstTime(collection, startTime);
+        }
+        newLine();
+    }
+
+    private static <T> void contains(T[] initArray, Collection<T>... collections){
+
+        System.out.println("Searching: ");
+
+        for(Collection<T> collection : collections){
+            startTime = System.nanoTime();
+            for(int i = 0; i < collectionSize; i++){
+                collection.contains(initArray[i]);
+            }
+            printEstTime(collection, startTime);
+        }
+        newLine();
+    }
+
+    private static <T, K> void put(T[] initArray, K initValue, Map<T, K>... maps){
+
+        System.out.println("Adding: ");
+
+        for(Map<T, K> map : maps){
+            startTime = System.nanoTime();
+            for(int i = 0; i < collectionSize; i++){
+                map.put(initArray[i], initValue);
+            }
+            printEstTime(map, startTime);
+        }
+        newLine();
+    }
+
+    private static <T, K> void contains(T[] initArray, Map<T, K>... maps){
+
+        System.out.println("Searching: ");
+
+        for(Map<T, K> map : maps){
+            startTime = System.nanoTime();
+            for(int i = 0; i < collectionSize; i++){
+                map.containsKey(initArray[i]);
+            }
+            printEstTime(map, startTime);
+        }
+        newLine();
+    }
+
+    private static <T, K> void remove(T[] initArray, Map<T, K>... maps){
+
+        System.out.println("Removing: ");
+
+        for(Map<T, K> map : maps){
+            startTime = System.nanoTime();
+            for(int i = 0; i < collectionSize; i++){
+                map.remove(initArray[i]);
+            }
+            printEstTime(map, startTime);
+        }
+        newLine();
+    }
+
+    private static <T> void compareSpeeds(T[] initArray, Set<T>... sets){
+        add(initArray, sets);
+        contains(initArray, sets);
+        remove(initArray, sets);
+    }
+
+    private static <T> void compareSpeeds(T[] initArray, List<T>... lists){
+        add(initArray, lists);
+        searche(initArray, lists);
+        remove(initArray, lists);
+    }
+
+    private static <T, K> void compareSpeeds(T[] initArray, K initValue, Map<T, K>... maps){
+        put(initArray, maps);
+        contains(initArray, maps);
+        remove(initArray, maps);
+    }
 
     public static void main(String[] args) {
-        final int collectionSize = 10000;
+
 
         long startTime = 0, estimatedTime = 0;
 
         /* init array of values */
-        Integer[] values = new Integer[collectionSize];
         for(int i = 0; i < collectionSize; i++){
             values[i] = Integer.valueOf((int)(Math.random() * 100));
         }
@@ -19,81 +153,10 @@ public class CollectionsTests {
         ArrayList<Integer> arrayList = new ArrayList<>();
         LinkedList<Integer> linkedList = new LinkedList<>();
 
+        compareSpeeds(values, arrayList, linkedList);
 
-        /* adding */
-        System.out.println("Adding: ");
-        System.out.println();
-
-        /* arrayList */
-        startTime = System.nanoTime();
-        for(int i = 0; i < collectionSize; i++){
-            arrayList.add(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("arrayList: " + estimatedTime);
-
-        /* linkedList */
-        startTime = System.nanoTime();
-        for(int i = 0; i < collectionSize; i++){
-            linkedList.add(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("linkedList: " + estimatedTime);
-        System.out.println();
-
-
-
-        /* searching */
-        System.out.println("Searching: ");
-        System.out.println();
-
-        /* arrayList */
-        startTime = System.nanoTime();
-        for(int i = collectionSize - 1; i > 0; i--){
-            arrayList.indexOf(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("arrayList: " + estimatedTime);
-
-        /* linkedList */
-        startTime = System.nanoTime();
-        for(int i = collectionSize - 1; i > 0; i--){
-            linkedList.indexOf(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("linkedList: " + estimatedTime);
-        System.out.println();
-
-
-        /* Removing */
-        System.out.println("Removing: ");
-        System.out.println();
-
-        /* arrayList */
-        startTime = System.nanoTime();
-        for(int i = collectionSize - 1; i > 0; i--){
-            arrayList.remove(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("arrayList: " + estimatedTime);
-
-        /* linkedList */
-        startTime = System.nanoTime();
-        for(int i = collectionSize - 1; i > 0; i--){
-            linkedList.remove(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("linkedList: " + estimatedTime);
-        System.out.println();
-
-
-
-        /*                 */
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        /*                 */
+        newLine();
+        newLine();
 
 
         /* Sets */
@@ -101,208 +164,18 @@ public class CollectionsTests {
         LinkedHashSet<Integer> linkedHashSet = new LinkedHashSet<>();
         TreeSet<Integer> treeSet = new TreeSet<>();
 
+        compareSpeeds(values, hashSet, linkedHashSet, treeSet);
 
-        /* adding */
-        System.out.println("Adding: ");
-        System.out.println();
-
-        /* hashSet */
-        startTime = System.nanoTime();
-        for(int i = 0; i < collectionSize; i++){
-            hashSet.add(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("HashSet: " + estimatedTime);
-
-        /* LinkedHashSet */
-        startTime = System.nanoTime();
-        for(int i = 0; i < collectionSize; i++){
-            linkedHashSet.add(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("LinkedHashSet: " + estimatedTime);
-        System.out.println();
-
-        /* TreeSet */
-        startTime = System.nanoTime();
-        for(int i = 0; i < collectionSize; i++){
-            treeSet.add(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("TreeSet: " + estimatedTime);
-        System.out.println();
+        newLine();
+        newLine();
 
 
-
-        /* searching */
-        System.out.println("Searching: ");
-        System.out.println();
-
-        /* HashSet */
-        startTime = System.nanoTime();
-        for(int i = collectionSize - 1; i > 0; i--){
-            hashSet.contains(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("HashSet: " + estimatedTime);
-
-        /* LinkedHashSet */
-        startTime = System.nanoTime();
-        for(int i = collectionSize - 1; i > 0; i--){
-            linkedHashSet.contains(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("linkedHashList: " + estimatedTime);
-        System.out.println();
-
-        /* TreeSet */
-        startTime = System.nanoTime();
-        for(int i = collectionSize - 1; i > 0; i--){
-            treeSet.contains(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("treeSet: " + estimatedTime);
-        System.out.println();
-
-
-        /* Removing */
-        System.out.println("Removing: ");
-        System.out.println();
-
-        /* HashSet */
-        startTime = System.nanoTime();
-        for(int i = collectionSize - 1; i > 0; i--){
-            hashSet.remove(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("HashSet: " + estimatedTime);
-
-        /* LinkedHashSet */
-        startTime = System.nanoTime();
-        for(int i = collectionSize - 1; i > 0; i--){
-            linkedHashSet.remove(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("linkedHashSet: " + estimatedTime);
-        System.out.println();
-
-        /* TreeSet */
-        startTime = System.nanoTime();
-        for(int i = collectionSize - 1; i > 0; i--){
-            treeSet.remove(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("treeSet: " + estimatedTime);
-        System.out.println();
-
-
-
-
-        /*                 */
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        /*                 */
-
-
-        /* Sets */
+        /* Maps */
         HashMap<Integer, Integer> hashMap = new HashMap<>();
         LinkedHashMap<Integer, Integer> linkedHashMap = new LinkedHashMap<>();
         TreeMap<Integer, Integer> treeMap = new TreeMap<>();
 
+        compareSpeeds(values, new Integer(0), hashMap, linkedHashMap, treeMap);
 
-        /* adding */
-        System.out.println("Adding: ");
-        System.out.println();
-
-        /* hashMap */
-        startTime = System.nanoTime();
-        for(int i = 0; i < collectionSize; i++){
-            hashMap.put(values[i], Integer.valueOf(0));
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("HashMap: " + estimatedTime);
-
-        /* linkedHashMap */
-        startTime = System.nanoTime();
-        for(int i = 0; i < collectionSize; i++){
-            linkedHashMap.put(values[i], Integer.valueOf(0));
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("LinkedHashMap: " + estimatedTime);
-        System.out.println();
-
-        /* TreeMap */
-        startTime = System.nanoTime();
-        for(int i = 0; i < collectionSize; i++){
-            treeMap.put(values[i], Integer.valueOf(0));
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("TreeMap: " + estimatedTime);
-        System.out.println();
-
-
-
-        /* searching */
-        System.out.println("Searching: ");
-        System.out.println();
-
-        /* HashMap */
-        startTime = System.nanoTime();
-        for(int i = collectionSize - 1; i > 0; i--){
-            hashMap.containsKey(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("HashMap: " + estimatedTime);
-
-        /* LinkedHashMap */
-        startTime = System.nanoTime();
-        for(int i = collectionSize - 1; i > 0; i--){
-            linkedHashMap.containsKey(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("linkedHashMap: " + estimatedTime);
-        System.out.println();
-
-        /* TreeMap */
-        startTime = System.nanoTime();
-        for(int i = collectionSize - 1; i > 0; i--){
-            treeMap.containsKey(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("treeMap: " + estimatedTime);
-        System.out.println();
-
-
-        /* Removing */
-        System.out.println("Removing: ");
-        System.out.println();
-
-        /* HashMap */
-        startTime = System.nanoTime();
-        for(int i = collectionSize - 1; i > 0; i--){
-            hashMap.remove(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("HashMap: " + estimatedTime);
-
-        /* LinkedHashMap */
-        startTime = System.nanoTime();
-        for(int i = collectionSize - 1; i > 0; i--){
-            linkedHashMap.remove(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("linkedHashMap: " + estimatedTime);
-        System.out.println();
-
-        /* TreeMap */
-        startTime = System.nanoTime();
-        for(int i = collectionSize - 1; i > 0; i--){
-            treeMap.remove(values[i]);
-        }
-        estimatedTime = System.nanoTime() - startTime;
-        System.out.println("treeMap: " + estimatedTime);
-        System.out.println();
     }
 }
