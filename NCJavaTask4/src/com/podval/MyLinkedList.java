@@ -7,15 +7,18 @@ import java.util.LinkedList;
 public class MyLinkedList<E> implements ILinkedList<E> {
     private Node<E> headNode = null;
     private int length = 0;
-    private Class<E> myclass;
 
-    public MyLinkedList(Class<E> myclass) {
+    /*public MyLinkedList(Class<E> myclass) {
         this.myclass = myclass;
     }
 
     public MyLinkedList(Class<E> myclass, Node<E> headNode) {
         this.headNode = headNode;
         this.myclass = myclass;
+    }*/
+
+    public MyLinkedList(Node<E> headNode) {
+        this.headNode = headNode;
     }
 
     @Override
@@ -197,12 +200,12 @@ public class MyLinkedList<E> implements ILinkedList<E> {
     }
 
     public E[] toArray(){
-        E[] array = (E[])Array.newInstance(myclass, length);
-        Node<E> currentNode = headNode;
-
-        if(headNode == null){
-            return array;
+        if(headNode == null) {
+            return null;
         }
+
+        E[] array = (E[])Array.newInstance(headNode.getElement().getClass(), length);
+        Node<E> currentNode = headNode;
 
         for(int i = 0; i < length; i++){
             array[i] = (E) currentNode.getElement();
