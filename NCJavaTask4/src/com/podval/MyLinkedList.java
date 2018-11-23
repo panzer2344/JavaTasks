@@ -17,6 +17,8 @@ public class MyLinkedList<E> implements ILinkedList<E> {
         this.myclass = myclass;
     }*/
 
+    public MyLinkedList(){}
+
     public MyLinkedList(Node<E> headNode) {
         this.headNode = headNode;
     }
