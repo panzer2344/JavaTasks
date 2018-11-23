@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8304746-5fcf-4f10-b816-a3d46a87257e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/podval/MainClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/podval/MyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/podval/MyLinkedList.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,7 +15,7 @@
     <session id="-761484451">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.53" value="1" />
@@ -31,9 +29,14 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="3833" />
+          <entry key="PLAIN_TEXT" value="82" />
         </counts>
       </usages-collector>
-      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.create.new" value="1" />
+        </counts>
+      </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JAVA" value="7" />
@@ -48,6 +51,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="3833" />
+          <entry key="txt" value="82" />
         </counts>
       </usages-collector>
     </session>
@@ -109,8 +113,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/podval/MyLinkedList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="215" lean-forward="true" selection-start-line="215" selection-end-line="215" />
+            <state relative-caret-position="237">
+              <caret line="206" column="64" lean-forward="true" selection-start-line="206" selection-start-column="64" selection-end-line="206" selection-end-column="64" />
               <folding>
                 <element signature="e#527#528#0" expanded="true" />
                 <element signature="e#567#568#0" expanded="true" />
@@ -186,6 +190,11 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -327,7 +336,7 @@
       <workItem from="1542886685936" duration="902000" />
       <workItem from="1542986672664" duration="632000" />
       <workItem from="1542987372732" duration="5000" />
-      <workItem from="1542987529661" duration="500000" />
+      <workItem from="1542987529661" duration="806000" />
     </task>
     <task id="LOCAL-00001" summary="added toArray, toString funcs and a few tests">
       <created>1542280370697</created>
@@ -336,11 +345,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542280370697</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="try to get rid of ClassE field. Changed constructor and toArray function">
+      <created>1542988281648</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542988281648</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27206000" />
+    <option name="totallyTimeSpent" value="27512000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -385,7 +401,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added toArray, toString funcs and a few tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="added toArray, toString funcs and a few tests" />
+    <MESSAGE value="try to get rid of ClassE field. Changed constructor and toArray function" />
+    <option name="LAST_COMMIT_MESSAGE" value="try to get rid of ClassE field. Changed constructor and toArray function" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Node.java" />
@@ -442,8 +459,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/podval/MyLinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="215" lean-forward="true" selection-start-line="215" selection-end-line="215" />
+        <state relative-caret-position="237">
+          <caret line="206" column="64" lean-forward="true" selection-start-line="206" selection-start-column="64" selection-end-line="206" selection-end-column="64" />
           <folding>
             <element signature="e#527#528#0" expanded="true" />
             <element signature="e#567#568#0" expanded="true" />
