@@ -7,7 +7,7 @@ import java.util.LinkedList;
 public class MainClass {
 
     public static void main(String[] args) {
-        MyLinkedList<Integer> list = new MyLinkedList<>(Integer.TYPE);
+        MyLinkedList<Integer> list = new MyLinkedList<>();
         final int initSize = 10;
 
         for(int i = 0; i < 10; i++){
@@ -40,7 +40,7 @@ public class MainClass {
 
         System.out.println(list);
 
-        MyLinkedList<Integer> myCompList = new MyLinkedList<>(Integer.TYPE); // for comparing with java.util.LinkedList
+        MyLinkedList<Integer> myCompList = new MyLinkedList<>(); // for comparing with java.util.LinkedList
         LinkedList<Integer> juCompList = new LinkedList<>();
         int compListSize = 10000;
         long startTime = 0, estimatedTime = 0;
