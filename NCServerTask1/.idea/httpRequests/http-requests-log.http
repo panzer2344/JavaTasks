@@ -1,0 +1,159 @@
+POST http://localhost:8080/login
+HOST: http://localhost:8080
+content-type: application/x-www-form-urlencoded
+content-length: 25
+
+login=123&password=123123
+
+###
+
+POST http://localhost:8080/login
+HOST: http://localhost:8080
+content-type: application/x-www-form-urlencoded
+content-length: 25
+
+login=123&password=123123
+
+###
+
+POST http://localhost:8080/login
+HOST: http://localhost:8080
+Content-Type: application/x-www-form-urlencoded
+content-length: 26
+
+login=123&password=123123
+
+###
+
+POST http://localhost:8080/login
+HOST: http://localhost:8080
+Content-Type: application/x-www-form-urlencoded
+content-length: 25
+
+login=123&password=123123
+
+###
+
+POST http://localhost:8080/login
+Content-Type: application/x-www-form-urlencoded
+content-length: 25
+
+    login=123&password=123123
+
+###
+
+POST http://localhost:8080/login
+Content-Type: application/x-www-form-urlencoded
+content-length: 25
+
+    login=123&password=123123
+
+###
+
+POST http://localhost:8080/login
+Content-Type: application/x-www-form-urlencoded
+
+    login=1&password=1123
+
+<> 2018-12-11T082558.500.html
+
+###
+
+POST http://localhost:8080/login
+
+    login="1"&password="1123"
+
+<> 2018-12-11T082310.500.html
+
+###
+
+POST http://localhost:8080/login
+
+    login=1&password=1123
+
+<> 2018-12-11T082253.500.html
+
+###
+
+POST http://localhost:8080/login
+
+{
+    login=1
+    password=1123
+}
+
+<> 2018-12-11T082125.500.html
+
+###
+
+POST http://localhost:8080/login
+
+login=1
+password=1123
+
+<> 2018-12-11T082049.500.html
+
+###
+
+POST http://localhost:8080/login
+
+login=;1&password=;1123
+
+<> 2018-12-11T080531.500.html
+
+###
+
+POST http://localhost:8080/login
+
+login=;1&password=;1123
+
+<> 2018-12-11T080501.500.html
+
+###
+
+POST http://localhost:8080/login
+
+login=;1&password=;1123
+
+<> 2018-12-11T080445-1.500.html
+
+###
+
+POST http://localhost:8080/login
+
+login=;1&password=;1123
+
+<> 2018-12-11T080445.500.html
+
+###
+
+POST http://localhost:8080/login
+
+login=;1&password=;1123
+
+<> 2018-12-11T080444.500.html
+
+###
+
+POST http://localhost:8080/login
+
+login=;1&password=;1123
+
+<> 2018-12-11T080228.500.html
+
+###
+
+POST http://localhost:8080/login
+
+login=;1&password=;1123
+
+<> 2018-12-11T080216.500.html
+
+###
+
+POST http://login
+
+login=;1&password=;1123
+
+###
+

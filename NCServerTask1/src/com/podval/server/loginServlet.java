@@ -8,11 +8,22 @@ import java.io.IOException;
 
 public class loginServlet extends HttpServlet {
 
+
     private void createAndSendResponse(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
+        if( !req.getParameter("login").matches("(^[a-zA-Z0-9]+$)") ){
+
+            sendResponse(req, resp,  " <h1> Bad Login </h1> " );
+
+            return;
+
+        }
+
 
         if( !req.getParameter("password").equals(req.getParameter("login") + "123") ){
 
-            sendResponse(req, resp, " <h1> Bad password </h1>");
+            sendResponse(req, resp, " <h1> Bad password </h1> ");
 
             return;
 
