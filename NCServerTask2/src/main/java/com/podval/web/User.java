@@ -33,4 +33,10 @@ public class User {
                 ", password='" + password + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        User user = (User)obj;
+        return login.equals(user.login) && password.equals(user.password);
+    }
 }

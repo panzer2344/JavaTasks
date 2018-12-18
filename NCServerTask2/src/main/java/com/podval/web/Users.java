@@ -7,6 +7,9 @@ public class Users {
 
     Map<String, User> users;
 
+    public static final User NO_USER = new User("nouser", "nopass");
+    public static final User EMPTY_USER = new User("", "");
+
     Users(){
         users = new HashMap<>();
     }
@@ -25,7 +28,14 @@ public class Users {
     }
 
     public User get(String login){
-        return users.get(login);
+
+        User result = users.get(login);
+        if(result == null) {
+            return NO_USER;
+        }else{
+            return result;
+        }
+
     }
 
     public void add(String login, String password){
@@ -37,4 +47,10 @@ public class Users {
         users.put(splited[0], new User(splited[0], splited[1]));
     }
 
+    @Override
+    public String toString() {
+        return "Users{" +
+                "users=" + users +
+                '}';
+    }
 }
