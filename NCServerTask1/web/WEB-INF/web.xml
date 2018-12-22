@@ -9,7 +9,7 @@
 
     <servlet>
         <servlet-name>loginServlet</servlet-name>
-        <servlet-class>com.podval.server.loginServlet</servlet-class>
+        <servlet-class>com.podval.server.LoginServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -23,7 +23,7 @@
 
     <servlet>
         <servlet-name>datetimeServlet</servlet-name>
-        <servlet-class>com.podval.server.datetimeServlet</servlet-class>
+        <servlet-class>com.podval.server.DatetimeServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -36,7 +36,7 @@
 
     <servlet>
         <servlet-name>mailServlet</servlet-name>
-        <servlet-class>com.podval.server.mailServlet</servlet-class>
+        <servlet-class>com.podval.server.MailServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class loginServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 
 
     private void createAndSendResponse(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
