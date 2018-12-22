@@ -22,8 +22,10 @@ public class Users {
         users = new HashMap<>();
 
         for (Object object : objects){
-            String[] pair = object.toString().split(" ");
-            users.put(pair[0], new User(pair[0], pair[1]));
+            if(!((String)object).equals("")) {
+                String[] pair = object.toString().split(" ");
+                users.put(pair[0], new User(pair[0], pair[1]));
+            }
         }
     }
 

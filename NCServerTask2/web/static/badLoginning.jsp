@@ -12,7 +12,8 @@
 </head>
 <body>
 
-<h1 align="center"> Pair (${login}, ${password}) isnt known </h1>
+<h1 align="center"> Pair (${login}, ${password}) isnt known </h1> <br> <br>
+<h3><a href="/static/login.html">back</a></h3>
 
 </body>
 </html>

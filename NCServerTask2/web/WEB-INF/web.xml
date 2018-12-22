@@ -35,6 +35,16 @@
         <servlet-name>logout</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>newPassword</servlet-name>
+        <servlet-class>com.podval.web.newPassword</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>newPassword</servlet-name>
+        <url-pattern>/newpassword</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>

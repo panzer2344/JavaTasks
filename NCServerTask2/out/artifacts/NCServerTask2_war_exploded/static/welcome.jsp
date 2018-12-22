@@ -12,7 +12,38 @@
 </head>
 <body>
 
-<h1 align="center"> Welcome, ${login}</h1>
+<h1 align="center"> Welcome,
+
+    <%
+        Cookie[] cookies = request.getCookies();
+        Boolean haveCookie = false;
+        String login = null;
+
+        if(cookies != null) {
+            for (Cookie cookie : cookies){
+                if(cookie.getName().equals("login")){
+                    login = cookie.getValue();
+                    haveCookie = true;
+                    break;
+                }
+            }
+        }
+
+        Object loginS = request.getSession(false).getAttribute("login");
+
+        if(haveCookie){
+            out.print(login);
+        }
+        else if (loginS != null){
+            out.print((String)loginS);
+        } else{
+            out.print(request.getAttribute("login"));
+        }
+
+    %>
+
+
+</h1>
 
 <br><p align="center"><a href="/logout">Log out</a></p><br>
 

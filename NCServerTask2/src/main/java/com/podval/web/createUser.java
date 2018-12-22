@@ -46,10 +46,7 @@ public class createUser extends HttpServlet {
         }else {
             StringBuilder sb = new StringBuilder("\r\n").append(login).append(" ").append(password);
             Files.write(Paths.get(getServletContext().getRealPath(USERS_FILE)), sb.toString().getBytes(), StandardOpenOption.APPEND);
-            /*req.setAttribute("login", login);
-            req.setAttribute("password", password);
-            req.setAttribute("cookieCB", cookieCb);
-            req.getRequestDispatcher("login").forward(req, resp);*/
+            resp.sendRedirect("/static/login.html");
         }
 
     }
