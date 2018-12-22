@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>login</servlet-name>
-        <servlet-class>com.podval.web.login</servlet-class>
+        <servlet-class>com.podval.web.Login</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -17,7 +17,7 @@
 
     <servlet>
         <servlet-name>createUser</servlet-name>
-        <servlet-class>com.podval.web.createUser</servlet-class>
+        <servlet-class>com.podval.web.CreateUser</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -28,7 +28,7 @@
 
     <servlet>
         <servlet-name>logout</servlet-name>
-        <servlet-class>com.podval.web.logout</servlet-class>
+        <servlet-class>com.podval.web.Logout</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -38,7 +38,7 @@
     
     <servlet>
         <servlet-name>newPassword</servlet-name>
-        <servlet-class>com.podval.web.newPassword</servlet-class>
+        <servlet-class>com.podval.web.NewPassword</servlet-class>
     </servlet>
     
     <servlet-mapping>

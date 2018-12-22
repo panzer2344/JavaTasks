@@ -3,7 +3,7 @@ package com.podval.web;
 import java.util.HashMap;
 import java.util.List;
 
-public class loginAttempts {
+public class LoginAttempts {
 
     private static HashMap<String, Integer> count = new HashMap<>();
 

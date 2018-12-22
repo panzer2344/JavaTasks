@@ -15,7 +15,7 @@ import java.util.Optional;
 *
 * */
 
-public class login extends HttpServlet {
+public class Login extends HttpServlet {
 
     //private static final String USERS_FILE = "/data/users.txt";
     //private static Boolean oldRemember = false;
@@ -48,7 +48,7 @@ public class login extends HttpServlet {
     }
 
     private void enterCreateUserPage(HttpServletResponse resp) throws IOException {
-        resp.sendRedirect("/static/createUser.html");
+        resp.sendRedirect("/static/CreateUser.html");
     }
 
     private void initSession(HttpServletRequest req, User user) {
@@ -78,9 +78,9 @@ public class login extends HttpServlet {
 
     private void passwordAttemptsChecking(HttpServletRequest request, HttpServletResponse response, User user) throws IOException {
         String remoteIP = request.getRemoteAddr();
-        if(loginAttempts.get(remoteIP) < 2){
-            loginAttempts.inc(remoteIP);
-            printInvalidPasswordError(response, user, loginAttempts.get(remoteIP));
+        if(LoginAttempts.get(remoteIP) < 2){
+            LoginAttempts.inc(remoteIP);
+            printInvalidPasswordError(response, user, LoginAttempts.get(remoteIP));
         }else{
             request.getSession().setAttribute("tryLogin", user.getLogin());
             response.sendRedirect("/static/newPassword.html");
@@ -101,7 +101,7 @@ public class login extends HttpServlet {
                 return;
             } else {
                 String login = (String) session.getAttribute("login");
-                if (recordsManager.isKnownUser(context, login)) {
+                if (RecordsManager.isKnownUser(context, login)) {
                     enterWelcomePage(resp);
                     return;
                 } else {
@@ -109,8 +109,8 @@ public class login extends HttpServlet {
                 }
             }
         } else {
-            if (recordsManager.isKnownUser(context, user)) {
-                if (recordsManager.isValidPassword(context, user)) {
+            if (RecordsManager.isKnownUser(context, user)) {
+                if (RecordsManager.isValidPassword(context, user)) {
                     if(isNeedRemember) {
                         initSession(req, user);
                         enterWelcomePage(resp);
@@ -186,7 +186,7 @@ public class login extends HttpServlet {
         if (user.equals(Users.EMPTY_USER)) {
             if (cookies != null && cookies.length > 1) {
                 String login = readCookie(req, "login").get();
-                if (recordsManager.isKnownUser(context, login)) {
+                if (RecordsManager.isKnownUser(context, login)) {
                     enterWelcomePage(resp);
                 } else {
                     printEmptyInputDataError(req, resp, login, true);
@@ -197,8 +197,8 @@ public class login extends HttpServlet {
                 return;
             }
         } else {
-            if (recordsManager.isKnownUser(context, user)) {
-                if (recordsManager.isValidPassword(context, user)) {
+            if (RecordsManager.isKnownUser(context, user)) {
+                if (RecordsManager.isValidPassword(context, user)) {
                     if(isNeedRemember) {
                         initCookies(req, resp, user);
                         enterWelcomePage(resp);
@@ -232,8 +232,8 @@ public class login extends HttpServlet {
         String remember = req.getParameter("rememberCB");
 
         String remoteIP = req.getRemoteAddr();
-        if(!loginAttempts.isContain(remoteIP)){
-            loginAttempts.add(remoteIP);
+        if(!LoginAttempts.isContain(remoteIP)){
+            LoginAttempts.add(remoteIP);
         }
 
         if(iscookie){

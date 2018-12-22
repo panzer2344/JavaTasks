@@ -12,7 +12,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 
-public class createUser extends HttpServlet {
+public class CreateUser extends HttpServlet {
 
     private static final String USERS_FILE = "/data/users.txt";
 

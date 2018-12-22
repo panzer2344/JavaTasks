@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class newPassword extends HttpServlet {
+public class NewPassword extends HttpServlet {
 
     private void printMessage(HttpServletResponse response, String error) throws IOException{
         response.getOutputStream().print(error);
@@ -33,11 +33,11 @@ public class newPassword extends HttpServlet {
 
     private void changePassword(HttpServletRequest request, HttpServletResponse response, User user)
             throws IOException{
-        if(recordsManager.deleteRow(user.getLogin(), getServletContext())) {
-            recordsManager.addRecord(getServletContext(), user);
+        if(RecordsManager.deleteRow(user.getLogin(), getServletContext())) {
+            RecordsManager.addRecord(getServletContext(), user);
         }
         request.getSession().removeAttribute("tryLogin");
-        loginAttempts.zeroize(request.getRemoteAddr());
+        LoginAttempts.zeroize(request.getRemoteAddr());
         response.sendRedirect("/static/login.html");
     }
 
@@ -50,7 +50,7 @@ public class newPassword extends HttpServlet {
 
         // isValidPass use there to check if new pass equal to old
         if(!password.isEmpty()){
-            if(!recordsManager.isValidPassword(getServletContext(), user)) {
+            if(!RecordsManager.isValidPassword(getServletContext(), user)) {
                 changePassword(req, resp, user);
                 return;
             }else{

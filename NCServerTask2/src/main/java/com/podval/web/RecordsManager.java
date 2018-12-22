@@ -8,7 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-public class recordsManager {
+public class RecordsManager {
 
     private static final String USERS_FILE = "/data/users.txt";
 

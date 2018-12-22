@@ -4,7 +4,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.io.IOException;
 
-public class logout extends HttpServlet {
+public class Logout extends HttpServlet {
 
     public static void removeCookies(Cookie[] cookies, HttpServletResponse resp){
 
