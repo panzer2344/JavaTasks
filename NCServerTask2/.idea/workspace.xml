@@ -8,33 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="08f87dc3-06db-4b0e-9573-eb6ba4927f5b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../NCServerTask1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NCServerTask1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/NCServerTask2_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/NCServerTask2_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/NCServerTask2_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/NCServerTask2_war_exploded/WEB-INF/classes/com/podval/web/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/NCServerTask2_war_exploded/WEB-INF/classes/com/podval/web/Users.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/NCServerTask2_war_exploded/WEB-INF/classes/com/podval/web/createUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/NCServerTask2_war_exploded/WEB-INF/classes/com/podval/web/login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/NCServerTask2_war_exploded/WEB-INF/classes/com/podval/web/logout.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/NCServerTask2_war_exploded/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/NCServerTask2_war_exploded/data/users.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/NCServerTask2_war_exploded/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/NCServerTask2_war_exploded/static/badLoginning.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/NCServerTask2_war_exploded/static/createUser.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/NCServerTask2_war_exploded/static/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/NCServerTask2_war_exploded/static/welcome.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/podval/web/createUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/podval/web/CreateUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/podval/web/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/podval/web/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/podval/web/loginAttempts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/podval/web/LoginAttempts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/podval/web/logout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/podval/web/Logout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/podval/web/newPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/podval/web/NewPassword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/podval/web/recordsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/podval/web/RecordsManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/podval/web/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/podval/web/Users.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/podval/web/createUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/podval/web/createUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/podval/web/login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/podval/web/login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/podval/web/logout.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/podval/web/logout.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,7 +35,7 @@
     <session id="2101869016">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.108" value="1" />
           <entry key="project.open.time.5" value="1" />
@@ -100,7 +74,7 @@
           <entry key="html" value="417" />
           <entry key="java" value="15656" />
           <entry key="jsp" value="1458" />
-          <entry key="txt" value="35" />
+          <entry key="txt" value="110" />
           <entry key="xml" value="220" />
         </counts>
       </usages-collector>
@@ -109,7 +83,7 @@
           <entry key="HTML" value="417" />
           <entry key="JAVA" value="15656" />
           <entry key="JSP" value="1458" />
-          <entry key="PLAIN_TEXT" value="71" />
+          <entry key="PLAIN_TEXT" value="146" />
           <entry key="XML" value="220" />
         </counts>
       </usages-collector>
@@ -132,8 +106,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="408">
+              <caret line="24" column="62" lean-forward="true" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -342,7 +316,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545488078700" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545492481529" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -451,7 +425,7 @@
       <workItem from="1545125894460" duration="29503000" />
       <workItem from="1545217779547" duration="16283000" />
       <workItem from="1545308169338" duration="658000" />
-      <workItem from="1545403986640" duration="16043000" />
+      <workItem from="1545403986640" duration="16750000" />
     </task>
     <task id="LOCAL-00001" summary="finished">
       <created>1545485113937</created>
@@ -460,11 +434,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545485113937</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="classes names changed. added war packaging to pom.xml">
+      <created>1545488144551</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1545488144551</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67619000" />
+    <option name="totallyTimeSpent" value="68326000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -477,7 +458,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13646056" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -491,7 +471,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3557484" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3557484" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32968238" />
@@ -555,7 +535,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished" />
+    <MESSAGE value="classes names changed. added war packaging to pom.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="classes names changed. added war packaging to pom.xml" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/podval/web/checkLogin.java" />
@@ -719,8 +700,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="408">
+          <caret line="24" column="62" lean-forward="true" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
         </state>
       </provider>
     </entry>

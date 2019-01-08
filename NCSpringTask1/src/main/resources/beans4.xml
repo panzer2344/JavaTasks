@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <context:component-scan base-package="com.podval.tests.fourth.configs"/>
+
+    <bean id="hdd" class="com.podval.tests.first.si.tests.Hdd">
+        <property name="name" value="#{SimpleConfig.hddName}"></property>
+    </bean>
+
+    <bean id="ram" class="com.podval.tests.first.si.tests.Ram">
+        <property name="name" value="#{SimpleConfig.ramName}"></property>
+    </bean>
+
+    <bean id="dvdRom" class="com.podval.tests.first.si.tests.DvdRom">
+        <property name="name" value="#{SimpleConfig.dvdRomName}"></property>
+    </bean>
+
+    <bean id="pc" class="com.podval.tests.first.si.tests.PC">
+        <property name="hdd" value="#{hdd}"></property>
+        <property name="ram" value="#{ram}"></property>
+        <property name="dvdRom" value="#{dvdRom}"></property>
+    </bean>
+
+
+</beans>

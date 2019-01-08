@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="hdd" class="com.podval.tests.first.si.tests.Hdd" scope="prototype">
+        <property name="name" value="hdd1"></property>
+    </bean>
+
+    <bean id="ram" class="com.podval.tests.first.si.tests.Ram" scope="prototype">
+        <property name="name" value="ram1"></property>
+    </bean>
+
+    <bean id="dvdRom" class="com.podval.tests.first.si.tests.DvdRom" scope="prototype">
+        <property name="name" value="dvdRom1"></property>
+    </bean>
+
+    <bean id="pc" class="com.podval.tests.first.si.tests.PC" scope="prototype">
+        <property name="dvdRom" ref="dvdRom"></property>
+        <property name="hdd" ref="hdd"></property>
+        <property name="ram" ref="ram"></property>
+    </bean>
+
+    <bean id="laptop" class="com.podval.tests.first.si.tests.Laptop" scope="prototype">
+        <property name="dvdRom" ref="dvdRom"></property>
+        <property name="hdd" ref="hdd"></property>
+        <property name="ram" ref="ram"></property>
+    </bean>
+
+
+
+
+</beans>

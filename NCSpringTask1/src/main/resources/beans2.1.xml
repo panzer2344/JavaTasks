@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="pine1" class="com.podval.tests.second.ci.tests.Pine" scope="prototype"/>
+    <bean id="pine2" class="com.podval.tests.second.ci.tests.Pine" scope="prototype"/>
+    <bean id="pine3" class="com.podval.tests.second.ci.tests.Pine" scope="prototype"/>
+
+    <bean id="birch1" class="com.podval.tests.second.ci.tests.Birch" scope="prototype"/>
+    <bean id="birch2" class="com.podval.tests.second.ci.tests.Birch" scope="prototype"/>
+    <bean id="birch3" class="com.podval.tests.second.ci.tests.Birch" scope="prototype"/>
+
+    <bean id="forestList" class="com.podval.tests.second.ci.tests.ForestList" scope="prototype">
+        <constructor-arg>
+            <list>
+                <ref bean="birch1"></ref>
+                <ref bean="birch2"></ref>
+                <ref bean="birch3"></ref>
+                <ref bean="pine1"></ref>
+                <ref bean="pine2"></ref>
+                <ref bean="pine3"></ref>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="forestSet" class="com.podval.tests.second.ci.tests.ForestSet" scope="prototype">
+        <constructor-arg>
+            <set>
+                <ref bean="birch1"></ref>
+                <ref bean="birch2"></ref>
+                <ref bean="birch3"></ref>
+                <ref bean="pine1"></ref>
+                <ref bean="pine2"></ref>
+                <ref bean="pine3"></ref>
+            </set>
+        </constructor-arg>
+    </bean>
+    <bean id="forestMap" class="com.podval.tests.second.ci.tests.ForestMap" scope="prototype">
+        <constructor-arg>
+            <map>
+                <entry key-ref="pine1" value="sosenka"></entry>
+                <entry key-ref="pine2" value="sosnisha"></entry>
+                <entry key-ref="pine3" value="sosna"></entry>
+                <entry key-ref="birch1" value="berezonka"></entry>
+                <entry key-ref="birch2" value="berezka"></entry>
+                <entry key-ref="birch3" value="berezucki"></entry>
+            </map>
+        </constructor-arg>
+    </bean>
+
+
+
+
+</beans>
