@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="mammal" class="com.podval.tests.third.tests.Mammal" abstract="true">
+        <property name="paws" value="big paws"></property>
+    </bean>
+
+    <bean id="cat" class="com.podval.tests.third.tests.Cat" parent="mammal">
+        <property name="tail" value="the majestic tail"></property>
+    </bean>
+
+    <bean id="lion" class="com.podval.tests.third.tests.Lion" parent="cat">
+        <property name="mane" value="royal mane"></property>
+    </bean>
+
+
+</beans>

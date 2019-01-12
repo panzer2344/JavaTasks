@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="hdd" class="com.podval.tests.first.ci.tests.Hdd" scope="prototype">
+        <constructor-arg type="java.lang.String" value="hdd1"/>
+    </bean>
+
+    <bean id="ram" class="com.podval.tests.first.ci.tests.Ram" scope="prototype">
+        <constructor-arg type="java.lang.String" value="ram1"/>
+    </bean>
+
+    <bean id="dvdRom" class="com.podval.tests.first.ci.tests.DvdRom" scope="prototype">
+        <constructor-arg type="java.lang.String" value="dvdRom1"/>
+    </bean>
+
+    <bean id="pc" class="com.podval.tests.first.ci.tests.PC" scope="prototype">
+        <constructor-arg type="com.podval.tests.first.ci.tests.Hdd" ref="hdd"/>
+        <constructor-arg type="com.podval.tests.first.ci.tests.DvdRom" ref="dvdRom"/>
+        <constructor-arg type="com.podval.tests.first.ci.tests.Ram" ref="ram"/>
+    </bean>
+
+    <bean id="laptop" class="com.podval.tests.first.ci.tests.Laptop" scope="prototype">
+        <constructor-arg type="com.podval.tests.first.ci.tests.Hdd" ref="hdd"/>
+        <constructor-arg type="com.podval.tests.first.ci.tests.DvdRom" ref="dvdRom"/>
+        <constructor-arg type="com.podval.tests.first.ci.tests.Ram" ref="ram"/>
+    </bean>
+
+
+
+
+</beans>

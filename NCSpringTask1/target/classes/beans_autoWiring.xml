@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--<context:annotation-config/>-->
+    <context:component-scan base-package="com.podval.tests.first.ci.main"/>
+
+    <!--<bean id="circle" class="com.podval.firsttask.first.main.Circle">
+        <constructor-arg type="java.lang.String" value="circle"/>
+        <constructor-arg type="int" value="5"/>
+    </bean>
+
+    <bean id="rectangle" class="com.podval.firsttask.first.main.Rectangle">
+        <constructor-arg type="java.lang.String" value="rectangle"/>
+        <constructor-arg type="int" value="5"/>
+        <constructor-arg type="int" value="5"/>
+    </bean>-->
+
+    <bean id="print" class="com.podval.tests.first.ci.main.Print"></bean>
+        <!--<property name="figure" ref="rectangle"></property>
+    </bean>-->
+
+
+</beans>
