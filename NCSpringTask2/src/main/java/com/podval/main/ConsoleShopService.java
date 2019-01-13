@@ -18,7 +18,7 @@ public class ConsoleShopService extends ConsoleObjectService {
         return new Shop(
                 (String) IConsoleMainService.getObjectFromInput("Input name: "),
                 (String) IConsoleMainService.getObjectFromInput("Input area: "),
-                (Integer) IConsoleMainService.getObjectFromInput("Input fee: ")
+                Integer.parseInt ((String) IConsoleMainService.getObjectFromInput("Input fee: "))
         );
     }
 

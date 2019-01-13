@@ -22,31 +22,6 @@ public class BookService extends ServiceImpl implements IBookService {
         super(new BookDao());
     }
 
-    /*@Override
-    public Book find(int id) {
-        return (Book)bookDao.findById(id);
-    }
-
-    @Override
-    public void save(IModel book) {
-        bookDao.save(book);
-    }
-
-    @Override
-    public void delete(IModel book) {
-        bookDao.delete(book);
-    }
-
-    @Override
-    public void update(IModel book) {
-        bookDao.update(book);
-    }
-
-    @Override
-    public Integer count(){
-        return bookDao.count();
-    }*/
-
     protected PurchaseDao purchaseDao = new PurchaseDao();
     protected ShopDao shopDao = new ShopDao();
 

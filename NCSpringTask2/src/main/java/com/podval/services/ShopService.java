@@ -13,36 +13,6 @@ import java.util.List;
 
 public class ShopService extends ServiceImpl implements IShopService {
 
-    /*protected ShopDao shopDao = new ShopDao();
-
-    public ShopService(){
-    }
-
-    @Override
-    public Shop find(int id) {
-        return (Shop) shopDao.findById(id);
-    }
-
-    @Override
-    public void save(IModel model) {
-        shopDao.save(model);
-    }
-
-    @Override
-    public void delete(IModel model) {
-        shopDao.delete(model);
-    }
-
-    @Override
-    public void update(IModel model) {
-        shopDao.update(model);
-    }
-
-    @Override
-    public List<Shop> findAll() {
-        return shopDao.findAll();
-    }*/
-
     protected PurchaserDao purchaserDao = new PurchaserDao();
     protected PurchaseDao purchaseDao = new PurchaseDao();
 

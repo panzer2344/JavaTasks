@@ -1,0 +1,10 @@
+INSERT INTO public.purchase (id, date, seller, purchaser, book, cnt, summa) VALUES (1, '2018-12-21 00:00:00.000000', 1, 1, 1, 3, 1500);
+INSERT INTO public.purchase (id, date, seller, purchaser, book, cnt, summa) VALUES (2, '2018-09-13 00:00:00.000000', 2, 2, 2, 5, 10000);
+INSERT INTO public.purchase (id, date, seller, purchaser, book, cnt, summa) VALUES (3, '2018-08-17 00:00:00.000000', 3, 3, 3, 20, 28000);
+INSERT INTO public.purchase (id, date, seller, purchaser, book, cnt, summa) VALUES (4, '2018-06-19 00:00:00.000000', 4, 4, 4, 40, 32000);
+INSERT INTO public.purchase (id, date, seller, purchaser, book, cnt, summa) VALUES (5, '2018-05-10 00:00:00.000000', 1, 5, 1, 100, 50000);
+INSERT INTO public.purchase (id, date, seller, purchaser, book, cnt, summa) VALUES (6, '2018-04-02 00:00:00.000000', 2, 1, 2, 100, 200000);
+INSERT INTO public.purchase (id, date, seller, purchaser, book, cnt, summa) VALUES (7, '2018-03-12 00:00:00.000000', 1, 1, 1, 1, 500);
+INSERT INTO public.purchase (id, date, seller, purchaser, book, cnt, summa) VALUES (8, '2019-01-05 00:00:00.000000', 1, 3, 5, 10, 15000);
+INSERT INTO public.purchase (id, date, seller, purchaser, book, cnt, summa) VALUES (9, '2019-01-07 00:00:00.000000', 2, 2, 6, 2, 200000);
+INSERT INTO public.purchase (id, date, seller, purchaser, book, cnt, summa) VALUES (10, '2019-01-01 00:00:00.000000', 1, 1, 2, 10, 20000);

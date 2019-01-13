@@ -57,13 +57,6 @@ public abstract class ConsoleObjectService implements IConsoleObjectService {
 
     @Override
     public void updateById() {
-        /*System.out.println("Input id: ");
-         oldBook = bookService.find(new Scanner(System.in).nextInt());
-
-        modelClass. newBook = initBook(); //initBook
-        newBook.setId(oldBook.getId());
-
-        bookService.update(newBook);*/
         System.out.println("Input id: ");
         IModel oldModel = service.find(new Scanner(System.in).nextInt());
         IModel newModel = init();

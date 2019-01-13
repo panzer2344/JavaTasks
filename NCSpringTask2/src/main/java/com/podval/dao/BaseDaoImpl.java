@@ -89,20 +89,11 @@ public class BaseDaoImpl implements IBaseDao {
 
     }
 
-    /*@Override
-    public List getModelsWithRestrictionsAndInnerJoin(String condition, String join) {
-        return HibernateSessionFactoryUtil
-                .getSessionFactory()
-                .openSession()
-                .createQuery("from " + modelClass.getName() + " inner join " + join + " where " + condition)
-                .list();
-    }*/
-
     @Override
     public List getModelsWithRestrictionAndInnerJoin(String joinTableNameA, String pseudonimA, String joinOnA,
-                                       String joinTableNameB, String pseudonimB, String joinOnB,
-                                       String condition
-                                       ) {
+                                                     String joinTableNameB, String pseudonimB, String joinOnB,
+                                                     String condition
+    ) {
         String[] strings = modelClass.getName().split("\\.");
         String name = strings[strings.length - 1].toLowerCase();
         return HibernateSessionFactoryUtil
@@ -112,7 +103,7 @@ public class BaseDaoImpl implements IBaseDao {
                         " inner join " + joinTableNameA + " as " + pseudonimA + " on " + joinOnA +
                         " inner join " + joinTableNameB + " as " + pseudonimB + " on " + joinOnB
                         + " where " + condition
-                        )
+                )
                 .addEntity(modelClass)
                 .list();
     }

@@ -24,8 +24,6 @@ public interface IBaseDao {
 
     List getModelsWithRestrictions(String condition);
 
-    /*List getModelsWithRestrictionsAndInnerJoin(String condition, String join);*/
-
     List getModelsWithRestrictionAndInnerJoin(String joinTableNameA, String pseudonimA, String joinOnA,
                                            String joinTableNameB, String pseudonimB, String joinOnB,
                                            String condition

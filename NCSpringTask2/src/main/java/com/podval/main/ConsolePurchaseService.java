@@ -21,18 +21,18 @@ public class ConsolePurchaseService extends ConsoleObjectService {
         return new Purchase(
                 new Timestamp(
                         new GregorianCalendar(
-                                (Integer) IConsoleMainService.getObjectFromInput("Input year: "),
-                                ((Integer) IConsoleMainService.getObjectFromInput("Input month: ")) - 1,
-                                (Integer) IConsoleMainService.getObjectFromInput("Input day: ")
+                                Integer.parseInt((String) IConsoleMainService.getObjectFromInput("Input year: ")),
+                                Integer.parseInt(((String) IConsoleMainService.getObjectFromInput("Input month: "))) - 1,
+                                Integer.parseInt((String) IConsoleMainService.getObjectFromInput("Input day: "))
                         )
                                 .getTime()
                                 .getTime()
                 ),
-                (Integer) IConsoleMainService.getObjectFromInput("Input shop ID: "),
-                (Integer) IConsoleMainService.getObjectFromInput("Input purchaser ID: "),
-                (Integer) IConsoleMainService.getObjectFromInput("Input book ID: "),
-                (Integer) IConsoleMainService.getObjectFromInput("Input count: "),
-                (Integer) IConsoleMainService.getObjectFromInput("Input sum: ")
+                Integer.parseInt((String) IConsoleMainService.getObjectFromInput("Input shop ID: ")),
+                Integer.parseInt((String) IConsoleMainService.getObjectFromInput("Input purchaser ID: ")),
+                Integer.parseInt((String) IConsoleMainService.getObjectFromInput("Input book ID: ")),
+                Integer.parseInt((String) IConsoleMainService.getObjectFromInput("Input count: ")),
+                Integer.parseInt((String) IConsoleMainService.getObjectFromInput("Input sum: "))
         );
     }
 

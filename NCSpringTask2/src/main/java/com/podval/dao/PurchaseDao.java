@@ -16,14 +16,6 @@ public class PurchaseDao extends BaseDaoImpl {
 
     @SuppressWarnings("unchecked")
     public List<Purchase> getBuyedInStorageArea() {
-        /*return getModelsWithRestrictionsAndInnerJoin(
-                "true",
-                Shop.class.getName() + " shop" //+
-                        *//*" inner join " + Purchaser.class.getName() + " as purchaser"*//*
-                );*/
-        /*String[] strings = Shop.class.getName().split("\\.");
-        String name = strings[strings.length - 1].toLowerCase();
-        return  getModelsWithInnerJoin(name + " on " + name + ".");*/
         return getModelsWithRestrictionAndInnerJoin(
                 "shop", "s", "s.id = t.seller",
                 "purchaser", "p", "p.id = t.purchaser",

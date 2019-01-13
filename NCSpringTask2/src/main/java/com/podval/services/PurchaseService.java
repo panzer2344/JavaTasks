@@ -16,35 +16,6 @@ import java.util.*;
 
 public class PurchaseService extends ServiceImpl implements IPurchaseService {
 
-    /*protected PurchaseDao purchaseDao = new PurchaseDao();
-
-    public PurchaseService(){
-    }
-
-    @Override
-    public Purchase find(int id) {
-        return (Purchase)purchaseDao.findById(id);
-    }
-
-    @Override
-    public void save(IModel model) {
-        purchaseDao.save(model);
-    }
-
-    @Override
-    public void delete(IModel model) {
-        purchaseDao.delete(model);
-    }
-
-    @Override
-    public void update(IModel model) {
-        purchaseDao.update(model);
-    }
-
-    @Override
-    public List<Purchase> findAll() {
-        return purchaseDao.findAll();
-    }*/
 
     protected PurchaserDao purchaserDao = new PurchaserDao();
     protected ShopDao shopDao = new ShopDao();
@@ -244,15 +215,6 @@ public class PurchaseService extends ServiceImpl implements IPurchaseService {
     public List<Purchase> getPurchasesByPurchasersInOwnAreaWithMonthLessThen(Month month) {
         List<Purchase> purchaseList = (List<Purchase>) getModelsWithRestrictions("month(date) < " + month.getValue());
         return filterPurchasesListByBuingInPurchasersOwnArea(purchaseList);
-        /*List<Purchase> filteredPurchaseList = new LinkedList<>();
-        for(Purchase purchase : purchaseList){
-            if(getPurchaserByPurchase(purchase).getResidenceArea().equals(
-                getShopByPurhcase(purchase).getArea()
-            )){
-                filteredPurchaseList.add(purchase);
-            }
-        }
-        return filteredPurchaseList;*/
     }
 
     @Override

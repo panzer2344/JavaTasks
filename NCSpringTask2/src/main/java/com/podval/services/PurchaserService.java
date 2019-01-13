@@ -9,31 +9,6 @@ import java.util.List;
 
 public class PurchaserService extends ServiceImpl implements IPurchaserService {
 
-    //protected PurchaserDao purchaserDao = new PurchaserDao();
-
-    /*public PurchaserService(){
-    }
-
-    public Purchaser find(int id){
-        return (Purchaser)purchaserDao.findById(id);
-    }
-
-    public void save(IModel purchaser){
-        purchaserDao.save(purchaser);
-    }
-
-    public void delete(IModel purchaser){
-        purchaserDao.delete(purchaser);
-    }
-
-    public void update(IModel purchaser){
-        purchaserDao.update(purchaser);
-    }
-
-    public List<Purchaser> findAll(){
-        return purchaserDao.findAll();
-    }*/
-
     public PurchaserService() {
         super(new PurchaserDao());
     }
